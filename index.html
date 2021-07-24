@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <title>LOGIN-PAGES</title>
+    <link href="login.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="main_container" id="main_container">
+        <div class="first_container">
+            <div class="login_section" id="login_section" align="center">
+                <h2>Sign in</h2>
+                <div class="font_icon_reg">
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+                <li class="txt_option_li">Or use your account</li>
+                <div>
+                    <div class="login_error_msg">
+                        <span><!--Error msg shows here--></span>
+                    </div>
+                    <form method="POST" action="login.php">
+                        <input type="text" placeholder="Username" name="Login_Uname" required="">
+                        <input type="password" placeholder="Password" name="Login_Pass" required="">
+                        <br />
+                        <li class="Fpass" onclick="open_Fpass_box()">Forgot your password ?</li>
+                        <input type="submit" value="sign in" name="signin">
+                    </form>
+                </div>
+            </div>
+            <div class="signup_section" id="signup_section" align="center">
+                <h2>Creat Account</h2>
+                <div class="font_icon_reg">
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+                <li class="txt_option_li">Or your email for registration</li>
+                <div>
+                    <div class="signup_error_msg">
+                        <span><!--Error msg shows here--></span>
+                    </div>
+                    <form method="POST" action="login.php" name="signup_form" onsubmit="return validate_signup_form()">
+                        <input type="text" placeholder="Enter Your Username" name="signup_Uname" >
+                        <input type="email" placeholder="Enter Your Email" name="signup_Email" >
+                        <input type="password" placeholder="Enter Your Password" name="signup_Pass" >
+                        <li>By signig in you have agreed with our terms</li>
+                        <input type="submit" value="sign up" name="signup">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="second_container">
+            <div class="login_link_bg">
+                <h2>Welcome Back!</h2>
+                <li>
+                    To keep connected with us please login with your personal info
+                </li>
+                <input type="button" value="sign in" id="switch_signin_interface">
+            </div>
+            <div class="signup_link_bg">
+                <h2>Hello, Friend!</h2>
+                <li>
+                    Enter your details and start your journey with us
+                </li>
+                <input type="button" value="sign up" id="switch_signup_interface">
+            </div>
+        </div>
+    </div>
+
+    <!-- section for resetting password -->
+    <div class="pass_reset_section">
+        <div class="pass_reset_box" align="center">
+            <div class="sad_face_img"><img src="Fpass_pics.jpg" alt="login_img"></div>
+            <i class="fas fa-fan" onclick="close_Fpass_box()"></i>
+            <h2>Forgotten password?</h2>
+            <span>Don't worry we got you covered, just enter your Email below to recieve a link to reset your password</span>
+            <div class="success_sent">
+                A link to reset your password has been sent to your email.
+            </div>
+            <div class="failure_sent">Error!, Something went wrong (Email not registered).</div>
+            <form method="POST" action="login.php">
+                <input type="Email" placeholder="Enter your Email" name="Fpass_Email" required="">
+                <input type="submit" value="Send" name="">
+            </form>
+        </div>
+    </div>
+    <!-- Password reset Ends here -->
+
+</body>
+<!----------------------------------
+ all js required for this page 
+------------------------------------>
+<script type="text/javascript" src="script.js"></script>
+</html>
