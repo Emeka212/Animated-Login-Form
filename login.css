@@ -1,0 +1,364 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: Arial;
+    background-image: url(login_bg_img.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.main_container{
+    width: 70%;
+    min-height: 480px;
+    max-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0px 14px 20px rgba(0,0,0,0.25),
+                0px 10px 10px rgba(0, 0, 0, 0.22);
+}
+.first_container,
+.second_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    transition: all 0.6s ease-in-out;
+}
+.first_container{
+    position: relative;
+    margin-left: 50%;
+}
+.second_container{
+    margin-left: -50%;
+}
+.login_section,
+.signup_section,
+.login_link_bg,
+.signup_link_bg {
+    width: 50%;
+    height: auto;
+    padding: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login_section,
+.signup_section{
+    background: #fff;
+}
+.login_section h2,
+.signup_section h2{
+    font-weight: bold;
+    font-size: 40px;
+    margin: 20px;
+    font-family: cursive;
+}
+.login_section .font_icon_reg i,
+.signup_section .font_icon_reg i {
+    padding: 10px 11px;
+    border: 1px solid #555;
+    color: #555;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 2px;
+}
+.login_section .login_error_msg,
+.signup_section .signup_error_msg{
+    background: inherit;
+    padding: 10px;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: none;
+}
+.login_section li,
+.signup_section li {
+    margin: 5px;
+    list-style: none;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+.login_section .txt_option_li,
+.signup_section .txt_option_li{
+    margin-top: 18px;
+}
+li.Fpass{
+    cursor: pointer;
+}
+.login_section form input,
+.signup_section form input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background: #eee;
+    margin: 8px 0;
+    outline: none;
+    padding-left: 10px;
+}
+.login_section form input[type="submit"],
+.signup_section form input[type="submit"] {
+    width: 150px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    background: #ff4b2b;
+}
+.login_section form input[type="submit"]:hover,
+.signup_section form input[type="submit"]:hover {
+    box-shadow:0 0 0px 2px #ff4b2b;
+    border: 1px solid #fff;
+    transition: 0.5s;
+}
+.signup_link_bg,
+.login_section{
+    position: relative;
+    z-index: 10;
+}
+.login_link_bg,
+.signup_section{
+    position: relative;
+    z-index: 10;
+}
+/* -------------------------------------------
+for styling the second container(switch btn)
+-------------------------------------------- */
+.second_container {
+    position: absolute;
+    top: 0;
+    background: #ff416C;
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+.login_link_bg,
+.signup_link_bg{
+    background: transparent;
+}
+.login_link_bg h2,
+.signup_link_bg h2{
+    font-size: 40px;
+    font-family: cursive;
+    text-align: center;
+}
+.login_link_bg li,
+.signup_link_bg li{
+    list-style: none;
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: 0.5px;
+    line-height: 20px;
+    font-weight: 100;
+}
+.login_link_bg input,
+.signup_link_bg input{
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid #ffffff;
+    background: transparent;
+    cursor: pointer;
+    margin: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    outline: none;
+}
+.login_link_bg input:hover,
+.signup_link_bg input:hover{
+    background: #fff;
+    color: #000;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.right_panel_active .first_container{
+    transform: translateX(-100%);
+    z-index: 2;
+}
+.right_panel_active .second_container{
+    transform: translateX(100%);
+}
+
+@media screen and (max-width: 1115px){
+    .main_container {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .main_container {
+        width: 95%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .main_container {
+        min-height: 960px;
+        max-height: 1000px;
+        margin: 50px 0 50px 2.5%;
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: unset;
+    }
+    .first_container,
+    .second_container {
+        flex-direction: column;
+        position: relative;
+        min-height: 960px;
+        max-height: 1010px;
+        overflow: hidden;
+    }
+    .first_container{
+        margin-left: 0%;
+        margin-top: 500px;
+    }
+    .second_container{
+        margin-left: 0%;
+        margin-top: -2000px;
+    }
+    .login_section,
+    .signup_section,
+    .login_link_bg,
+    .signup_link_bg {
+        width: 100%;
+        height: 500px;
+        padding: 40px 20px;
+    }
+
+    .right_panel_active .first_container{
+         transform: translateY(-100%);
+    }
+    .right_panel_active .second_container{
+        transform: translateY(100%);
+
+    }
+
+}
+
+
+/*------------------------------------------------
+for the password reset box
+--------------------------------------------------*/
+.pass_reset_section{
+    position: fixed;
+    padding: 0 25px;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    overflow: hidden;
+    background: #0000099c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    transition: 1s;
+    transform: blur(5px);
+}
+.pass_reset_box{
+    position: relative;
+    width: 500px;
+    padding: 0 25px 30px 25px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 5px 5px 10px 1px #0000099c;
+}
+div.sad_face_img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-top: -50px;
+    border: 1px solid #555;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+div.sad_face_img img{
+    width: 100%;
+}
+.pass_reset_box i{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 11px;
+    color: #000;
+    font-size: 25px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.pass_reset_box h2{
+    text-transform: uppercase;
+    font-size: 35px;
+    letter-spacing: 1px;
+}
+.pass_reset_box span{
+    font-weight: 100;
+    letter-spacing: 1px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+.pass_reset_box .success_sent,
+.pass_reset_box .failure_sent{
+    padding: 10px 10px 10px 15px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    color: #fff;
+    background: darkred;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.pass_reset_box .success_sent{
+    background: #0d3850;
+    display: none;
+}
+.pass_reset_box .failure_sent{
+    display: none;
+}
+.pass_reset_box form input{
+    width: 100%;
+    height: 42.5px;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin: 5px 0;
+    border: none;
+    outline: none;
+    background: #eee;
+}
+.pass_reset_box form input[type="submit"]{
+    background: #ff4b2b;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+.pass_reset_box form input[type="submit"]:hover{
+    box-shadow:0 0 0px 2px #a201258f;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
